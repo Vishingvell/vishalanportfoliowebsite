@@ -105,7 +105,12 @@ export function Certifications() {
   return (
     <ul className="certs">
       {certifications.map((x) => (
-        <li key={x}>{x}</li>
+        <li key={x.title}>
+          <h3>{x.title}</h3>
+          <p>
+            {x.issuer} · {x.issued}
+          </p>
+        </li>
       ))}
     </ul>
   );

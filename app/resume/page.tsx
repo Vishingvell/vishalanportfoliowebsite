@@ -37,8 +37,17 @@ export default function Resume() {
           <Skills />
         </section>
         <section>
-          <h2>Certifications</h2>
+          <h2>Courses &amp; certificates</h2>
+          <p>Completed courses, learning paths and workshops.</p>
           <Certifications />
+          <a
+            className="text-link"
+            href={`${profile.linkedinUrl}details/certifications/`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View credentials on LinkedIn ↗
+          </a>
         </section>
         <section>
           <h2>Connect</h2>

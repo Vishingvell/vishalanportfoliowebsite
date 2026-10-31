@@ -1,3 +1,4 @@
+import { YishunArtwork } from "@/components/YishunArtwork";
 import { achievement } from "@/src/content/portfolio";
 import {
   Header,
@@ -35,21 +36,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div
-            className="landscape"
-            role="img"
-            aria-label="An ink and wash landscape inspired by Singapore’s reservoirs"
-          >
-            <span className="sun" />
-            <span className="hill hill-one" />
-            <span className="hill hill-two" />
-            <span className="water" />
-            <span className="land-caption">
-              A little inspiration from home
-              <br />
-              YISHUN, SINGAPORE
-            </span>
-          </div>
+          <YishunArtwork />
           <span className="hero-index">01 — INTRODUCTION</span>
         </section>
         <section id="about" className="section wrap about">

@@ -48,9 +48,13 @@ export const experiences = [
 ] as const;
 export const projects = [
   {
+    name: "Legacy.Lite",
+    description: "Awarded an Honourable Mention at the PyCon 2026 Hackathon.",
+    url: "",
+  },
+  {
     name: "ScamIntel",
-    description:
-      "A multilingual scam-risk checker with OCR and a Vercel API. Received an Honourable Mention at the PyCon 2026 Hackathon.",
+    description: "A multilingual scam-risk checker with OCR and a Vercel API.",
     url: "https://scamintel.vercel.app/",
   },
   {
@@ -66,10 +70,51 @@ export const projects = [
     url: "",
   },
 ] as const;
+// Exact titles, issuers and dates visible on the public LinkedIn profile, checked 2026-10-31.
+// Course certificates and workshops are listed as training, not professional designations.
 export const certifications = [
-  "ISC2 Certified in Cybersecurity (CC)",
-  "Google Cybersecurity courses",
-  "TryHackMe Introduction to Cybersecurity",
+  { title: "AI Foundations", issuer: "OpenAI", issued: "Jul 2026" },
+  { title: "Applied AI Foundations", issuer: "OpenAI", issued: "Jul 2026" },
+  {
+    title: "Connect and Protect: Networks and Network Security",
+    issuer: "Coursera",
+    issued: "Sep 2023",
+  },
+  {
+    title: "Critical Thinking",
+    issuer: "Change Maker Consultancy",
+    issued: "Jul 2023",
+  },
+  {
+    title: "Introduction to Cyber Security Learning Path",
+    issuer: "TryHackMe",
+    issued: "Jul 2023",
+  },
+  {
+    title: "Play It Safe: Manage Security Risks",
+    issuer: "Coursera",
+    issued: "Jul 2023",
+  },
+  {
+    title: "Foundations of Cybersecurity",
+    issuer: "Coursera",
+    issued: "Jun 2023",
+  },
+  {
+    title: "Foundations of User Experience (UX) Design",
+    issuer: "Coursera",
+    issued: "Oct 2022",
+  },
+  {
+    title: "Aerospace Fundamentals with Flight Simulation",
+    issuer: "Singapore Polytechnic",
+    issued: "Sep 2019",
+  },
+  {
+    title: "Public Speaking Skills Workshop",
+    issuer: "Julia Gabriel Centre Pte. Ltd.",
+    issued: "Mar 2018",
+  },
 ] as const;
 
 export const skills = [
@@ -103,5 +148,5 @@ export const skills = [
 export const achievement = {
   title: "Honourable Mention",
   event: "PyCon 2026 Hackathon",
-  project: "ScamIntel",
+  project: "Legacy.Lite",
 } as const;
