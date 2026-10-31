@@ -1,190 +1,107 @@
-export interface SocialLink {
-  label: string;
-  url: string;
-}
-
-export interface Profile {
-  name: string;
-  initials: string;
-  introduction: string;
-  supportingStatement: string;
-  heroHeading: string;
-  heroCopy: string;
-  github: SocialLink;
-  linkedinUrl: string;
-  email: string;
-  canonicalUrl: string;
-}
-
-export interface Experience {
-  organisation: string;
-  role: string;
-  project?: string;
-  dates?: string;
-  summary: string;
-  responsibilities: string[];
-}
-
-export interface Project {
-  name: string;
-  url: string;
-  description: string;
-  purpose: string;
-  characteristics: string[];
-  technologies: string[];
-  collaborators: string[];
-  statusNote: string;
-  featured: boolean;
-}
-
-export interface Achievement {
-  title: string;
-  organisation: string;
-  date: string;
-  description: string;
-  url: string;
-  image?: string;
-  verified: boolean;
-}
-
-export interface SkillGroup {
-  title: string;
-  description: string;
-  items: string[];
-}
-
-export const profile: Profile = {
+export const profile = {
   name: "Vishalan Karunanithi",
-  initials: "VK",
+  givenName: "Vishalan",
+  familyName: "Karunanithi",
+  nickname: "Wish",
+  title: "Computer Science Student",
   introduction:
-    "Computer Science student building practical tools across cloud engineering, cybersecurity and artificial intelligence.",
-  supportingStatement:
-    "I enjoy turning real-world problems into understandable and testable software, with an emphasis on reliability, privacy and clear user experiences.",
-  heroHeading: "Building practical technology for real-world problems.",
-  heroCopy:
-    "I am a Computer Science student focused on cloud engineering, cybersecurity and practical AI. I build understandable and testable software with an emphasis on reliability, privacy and useful outcomes.",
+    "Computer Science student with experience in software testing, teaching and practical technology projects.",
+  email: "kcj.vishalan@gmail.com",
   github: { label: "GitHub", url: "https://github.com/Vishingvell" },
-  linkedinUrl: "https://www.linkedin.com/in/vishalan-karunanithi-258a99257",
-  email: "",
+  linkedinUrl: "https://www.linkedin.com/in/vishalan-karunanithi-258a99257/",
   canonicalUrl: "",
-};
-
-export const interests = [
-  "Cloud engineering",
-  "Cloud security",
-  "Cybersecurity",
-  "Artificial intelligence",
-  "Machine learning",
-  "Software development",
-  "Software testing",
-  "Python automation",
-  "Practical technology for real-world problems",
-] as const;
-
-export const experiences: Experience[] = [
+} as const;
+export const education = [
   {
-    organisation: "NTT DATA Singapore",
-    role: "Software Testing Intern",
-    project: "CORENET X",
-    summary:
-      "Contributed to manual quality assurance and submission-packaging workflows, combining careful status tracking with Python automation to reduce repetitive work.",
-    responsibilities: [
-      "Performed manual quality assurance and software testing.",
-      "Supported submission and packaging workflows.",
-      "Developed Python automation to reduce repetitive submission-packaging work.",
-      "Used Airtable to organise observations and maintain status histories.",
-      "Worked within an Agile and Scrum environment.",
-    ],
+    title: "Bachelor of Computer Science (Digital Systems Security)",
+    place: "University of Wollongong / SIM Global Education",
+    dates: "2026–Present",
   },
-];
-
-export const projects: Project[] = [
+  {
+    title: "Diploma in Electrical and Computer Engineering",
+    place: "Nanyang Polytechnic",
+    dates: "",
+  },
+] as const;
+export const experiences = [
+  {
+    role: "Part-Time Coding & Robotics Teacher",
+    organisation: "NK Robotics",
+    dates: "May 2026–Present",
+    detail:
+      "Teaching beginner Python to students aged 10–15, adapting guided exercises to different abilities, and supporting robotics activities, device setup and debugging.",
+  },
+  {
+    role: "QA Software Engineer Intern",
+    organisation: "NTT DATA",
+    dates: "Nov 2023–Apr 2024",
+    detail:
+      "Performed black-box testing and defect identification on CORENET X submission workflows. Developed Python scripts for IFC file processing, JSON manifests and automated ZIP packaging.",
+  },
+  {
+    role: "Security Trooper",
+    organisation: "Singapore Armed Forces",
+    dates: "May 2024–May 2026",
+    detail:
+      "Maintained operational records, processed enquiries and coordinated with shift-based teams.",
+  },
+] as const;
+export const projects = [
   {
     name: "ScamIntel",
+    description:
+      "A multilingual scam-risk checker with OCR and a Vercel API. Received an Honourable Mention at the PyCon 2026 Hackathon.",
     url: "https://scamintel.vercel.app/",
-    description:
-      "ScamIntel is a personal project designed to help people check suspicious messages, links and screenshots before acting on them.",
-    purpose:
-      "The project was created to support scam awareness and help reduce uncertainty when users receive suspicious digital content.",
-    characteristics: [
-      "Analyses suspicious messages, links and screenshots.",
-      "Uses a hybrid risk-analysis approach.",
-      "Combines structured detection rules, semantic analysis, threat-intelligence signals and explainable machine-learning components.",
-      "Presents findings in understandable language.",
-      "Focuses on privacy and does not store uploaded screenshots through the analyser.",
-    ],
-    technologies: [],
-    collaborators: ["Rohith Shetty"],
-    statusNote: "An evolving prototype, not a perfect or final scam-detection system.",
-    featured: true,
   },
-];
-
-export const achievements: Achievement[] = [];
-
-export const verifiedAchievements = achievements.filter(
-  (achievement) =>
-    achievement.verified &&
-    achievement.title.trim().length > 0 &&
-    /^https?:\/\//.test(achievement.url),
-);
-
-export const skillGroups: SkillGroup[] = [
   {
-    title: "Engineering & automation",
+    name: "SAF Duty Scheduler",
     description:
-      "Tools and practices used to make software work clearer, repeatable and easier to validate.",
+      "A Python tool for duty allocation, workload analytics and Excel / Google Sheets exports.",
+    url: "",
+  },
+  {
+    name: "Security Log Analyzer",
+    description:
+      "A Python, pandas and Flask solution with MITRE ATT&CK-aligned findings.",
+    url: "",
+  },
+] as const;
+export const certifications = [
+  "ISC2 Certified in Cybersecurity (CC)",
+  "Google Cybersecurity courses",
+  "TryHackMe Introduction to Cybersecurity",
+] as const;
+
+export const skills = [
+  {
+    title: "Programming",
+    items: ["Python", "C", "C++", "C#", "JavaScript", "HTML", "CSS", "JSON"],
+  },
+  {
+    title: "Software & data",
     items: [
-      "Python automation",
-      "Workflow automation",
-      "Software testing",
-      "Manual quality assurance",
-      "Git and GitHub",
-      "Airtable status tracking",
+      "Black-box testing",
+      "Debugging",
+      "Scripting",
+      "pandas",
+      "NumPy",
+      "openpyxl",
+      "Git",
     ],
   },
   {
-    title: "Cloud & security",
-    description:
-      "The technical domains I am actively building towards through study and practical projects.",
+    title: "Systems & security",
     items: [
-      "Cloud engineering",
-      "Cloud security",
-      "Cybersecurity",
-      "Threat-intelligence signals",
-      "Privacy-conscious design",
+      "Windows",
+      "Linux",
+      "Kali Linux",
+      "Burp Suite",
+      "Cybersecurity fundamentals",
     ],
   },
-  {
-    title: "Applied AI",
-    description:
-      "Practical AI concepts demonstrated through ScamIntel and reflected in my professional focus.",
-    items: [
-      "Artificial intelligence",
-      "Machine learning fundamentals",
-      "Semantic analysis",
-      "Structured detection rules",
-      "Explainable machine-learning components",
-    ],
-  },
-  {
-    title: "Delivery & communication",
-    description:
-      "Ways of working that support shared understanding, dependable delivery and continuous improvement.",
-    items: [
-      "Agile",
-      "Scrum",
-      "Process optimisation",
-      "Technical documentation",
-      "Status history maintenance",
-    ],
-  },
-];
-
-export const socialLinks: SocialLink[] = [
-  profile.github,
-  ...(profile.linkedinUrl
-    ? [{ label: "LinkedIn", url: profile.linkedinUrl }]
-    : []),
-  ...(profile.email ? [{ label: "Email", url: `mailto:${profile.email}` }] : []),
-];
+] as const;
+export const achievement = {
+  title: "Honourable Mention",
+  event: "PyCon 2026 Hackathon",
+  project: "ScamIntel",
+} as const;

@@ -8,7 +8,9 @@ export function ExternalLink({ children, ...props }: ExternalLinkProps) {
   return (
     <a {...props} target="_blank" rel="noopener noreferrer">
       {children}
-      <span className="link-arrow" aria-hidden="true">↗</span>
+      <span className="link-arrow" aria-hidden="true">
+        ↗
+      </span>
     </a>
   );
 }
