@@ -1235,3 +1235,22 @@ body:has(.scroll-painting) .hero a:focus-visible { outline-color: #ffe1a9; }
   body:has(.scroll-painting) .hero-copy { padding: 28px 24px; }
   body:has(.scroll-painting) .hero-copy h1 { font-size: clamp(43px, 11vw, 66px); }
 }
+
+/* Navigation shares the ink frame of the introduction. */
+body:has(.scroll-painting) .header {
+  width: 100%; padding: 18px max(32px, calc((100% - 1160px) / 2));
+  background: #302439f2; color: #fff5ec; border-bottom: 1px solid #f5ba8359;
+}
+body:has(.scroll-painting) .header .brand span { color: #edc6ad; }
+body:has(.scroll-painting) .header nav a { transition: color .2s, background .2s; }
+body:has(.scroll-painting) .header nav a:hover { color: #ffc78d; }
+body:has(.scroll-painting) .header .nav-connect { border-color: #edba8c; color: #ffc78d; }
+body:has(.scroll-painting) .header a:focus-visible { outline-color: #ffe1a9; }
+@media(max-width:700px) {
+  body:has(.scroll-painting) .header { padding: 20px; gap: 18px; }
+  body:has(.scroll-painting) .header nav {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100%;
+    border-top: 1px solid #f5ba833b; padding-top: 14px;
+  }
+  body:has(.scroll-painting) .header nav a { padding: 7px 4px; text-align: center; }
+}
