@@ -12,7 +12,7 @@ export function ScrollPainting() {
       frame = 0;
       const distance = document.documentElement.scrollHeight - window.innerHeight;
       const progress = distance > 0 ? window.scrollY / distance : 1;
-      if (colour.current) colour.current.style.opacity = String(motion.matches ? 1 : Math.min(1, Math.max(.7, .7 + progress * .3)));
+      if (colour.current) colour.current.style.opacity = String(motion.matches ? 1 : Math.min(1, Math.max(0, progress * 1.4)));
     };
     const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
     update();

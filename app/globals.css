@@ -1209,7 +1209,7 @@ body:has(.tap-page .dropped)::before { opacity: 1; }
 }
 
 /* A vivid sunset on arrival, framed by deep ink and warm paper. */
-.scroll-painting-colour { opacity: .7; filter: saturate(1.18) contrast(1.04); }
+.scroll-painting-colour { opacity: 0; filter: saturate(1.18) contrast(1.04); }
 .scroll-painting::after { background: #fff4ed14; }
 body:has(.scroll-painting) .hero {
   min-height: calc(100svh - 90px);
