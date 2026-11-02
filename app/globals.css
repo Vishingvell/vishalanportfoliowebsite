@@ -697,7 +697,7 @@ body:has(.tap-page) {
 }
 @keyframes card-coin-drop {
   to {
-    transform: translate(-50%, 90px) rotate(35deg);
+    transform: translate(-50%, 60px) rotate(35deg);
     opacity: 0;
   }
 }
@@ -776,4 +776,348 @@ body:has(.tap-page) {
   background: #fff;
   padding: 3px 6px;
   border-radius: 3px;
+}
+
+.photo-origin {
+  margin: 12px 10px 0;
+  font-size: 11px;
+  color: #705364;
+}
+/* A tactile monochrome networking card, matching the physical card's ink. */
+body:has(.tap-page) {
+  background: radial-gradient(
+    ellipse at 50% 12%,
+    #fff 0%,
+    #f4f3f0 55%,
+    #eae9e5 100%
+  );
+  min-height: 100svh;
+}
+.tap-page {
+  position: relative;
+  isolation: isolate;
+  width: min(520px, calc(100% - 32px));
+  max-width: 520px;
+  margin: 28px auto;
+  padding: 30px 36px 28px;
+  border: 1px solid #d5d3ce;
+  border-radius: 26px;
+  background: #fffefa;
+  box-shadow:
+    0 22px 65px #1616160e,
+    0 3px 10px #16161606;
+  overflow: hidden;
+}
+.tap-page::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border: 1px solid #e5e3dd;
+  border-radius: 19px;
+  pointer-events: none;
+  z-index: -1;
+}
+.tap-page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  opacity: 0.4;
+  background-image: radial-gradient(#16161614 0.45px, transparent 0.7px);
+  background-size: 5px 5px;
+}
+.card-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 18px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #dedbd4;
+}
+.card-wordmark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #242424;
+  border-radius: 50%;
+  font:
+    italic 20px "Playfair Display",
+    serif;
+}
+.card-topline .eyebrow {
+  margin: 0;
+  font-size: 9px;
+  letter-spacing: 0.19em;
+  color: #55534f;
+}
+.card-star {
+  font-size: 21px;
+  width: 34px;
+}
+.tap-intro h1 {
+  font-size: clamp(38px, 8vw, 54px);
+  margin: 0 0 17px;
+}
+.tap-intro h1 em {
+  font:
+    italic 27px "Playfair Display",
+    serif;
+  letter-spacing: 0.02em;
+  margin-top: 3px;
+  color: #49463f;
+}
+.tap-intro p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #635f57;
+  margin-bottom: 0;
+}
+.tap-intro p span {
+  color: #242424;
+}
+.card-well {
+  width: min(100%, 304px);
+  aspect-ratio: 1;
+  margin: 20px auto 6px;
+}
+.card-well::before {
+  content: "";
+  position: absolute;
+  inset: 9% 4% 4%;
+  border-radius: 50%;
+  border: 1px solid #e6e2d8;
+  background: radial-gradient(
+    ellipse at center,
+    #f5f2e9 0%,
+    #fbf9f3 60%,
+    transparent 73%
+  );
+}
+.card-well::after {
+  content: "";
+  position: absolute;
+  height: 6%;
+  width: 65%;
+  left: 18%;
+  bottom: 4%;
+  background: #15151512;
+  filter: blur(9px);
+  border-radius: 50%;
+}
+.well-illustration {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.card-well .coin {
+  z-index: 3;
+  left: 50%;
+  top: 45%;
+  width: 44px;
+  height: 44px;
+  color: #151515;
+  background: #fffdf5;
+  border: 2px solid #242424;
+  outline: 1px solid #716d62;
+  outline-offset: -6px;
+  box-shadow:
+    3px 4px 0 #242424,
+    0 7px 14px #16161612;
+  transition: box-shadow 0.2s ease;
+}
+.card-well .coin:hover:not(:disabled) {
+  box-shadow:
+    3px 5px 0 #242424,
+    0 10px 20px #16161620;
+}
+.card-well .coin:focus-visible {
+  outline: 3px solid #151515;
+  outline-offset: 7px;
+}
+.coin-prompt {
+  padding: 6px 10px;
+  border: 1px solid #d6d2c8;
+  border-radius: 20px;
+  background: #fffefb;
+  color: #36332d;
+  font-size: 10px;
+  font-weight: 600;
+  box-shadow: 0 2px 5px #16161608;
+}
+.tap-page .well-hint {
+  margin-top: 10px;
+  font-size: 11px;
+  color: #716c62;
+  letter-spacing: 0.02em;
+}
+.well-surface-ripple {
+  position: absolute;
+  z-index: 2;
+  left: 35%;
+  top: 70%;
+  width: 30%;
+  height: 7%;
+  border: 1px solid #fffcf2;
+  border-radius: 50%;
+  opacity: 0;
+}
+.dropped .well-surface-ripple {
+  animation: surface-ripple 1.1s 0.5s ease-out both;
+}
+.revealed-contacts {
+  border-top: 1px solid #dedbd4;
+  margin-top: 28px;
+  padding-top: 25px;
+}
+.revealed-contacts h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #242424;
+}
+.tap-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 9px;
+  margin-top: 0;
+  text-align: left;
+}
+.tap-page .tap-actions .contact-action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 65px;
+  padding: 11px 14px;
+  border: 1px solid #dedbd4;
+  border-radius: 11px;
+  background: #fffefb;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+.tap-page .tap-actions .contact-action:hover {
+  background: #f5f2e9;
+  border-color: #aaa495;
+}
+.contact-symbol {
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #dedbd4;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font:
+    600 14px "DM Sans",
+    sans-serif;
+}
+.contact-copy {
+  flex: 1;
+  min-width: 0;
+}
+.contact-copy strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.contact-copy small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.6;
+  color: #716c62;
+  overflow-wrap: anywhere;
+}
+.contact-arrow {
+  font-size: 15px;
+  color: #716c62;
+}
+.tap-page .tap-actions .contact-primary {
+  background: #242424;
+  color: #fffefb;
+  border-color: #242424;
+}
+.tap-page .tap-actions .contact-primary:hover {
+  background: #3c3933;
+  border-color: #3c3933;
+}
+.contact-primary .contact-copy small,
+.contact-primary .contact-arrow {
+  color: #e5e1d7;
+}
+.contact-primary .contact-symbol {
+  border-color: #777268;
+}
+.card-signoff {
+  font:
+    italic 13px "Playfair Display",
+    serif;
+  color: #716c62;
+  margin: 24px 0 0;
+}
+.card-signoff span {
+  display: block;
+  font:
+    14px "DM Sans",
+    sans-serif;
+  margin-bottom: 8px;
+}
+@keyframes surface-ripple {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  25% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+}
+@media (min-width: 500px) {
+  .tap-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact-primary {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 380px) {
+  .tap-page {
+    padding: 25px 24px;
+    margin: 16px auto;
+  }
+  .card-topline {
+    margin-bottom: 22px;
+  }
+  .card-topline .eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.12em;
+  }
+  .tap-intro p {
+    font-size: 12px;
+  }
+  .card-well {
+    margin-top: 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dropped .well-surface-ripple {
+    animation: none;
+  }
+}
+
+.well-surface-ripple {
+  top: 65%;
+}
+
+.tap-page {
+  min-height: 0;
+}
+.revealed-contacts h2 {
+  scroll-margin-top: 24px;
 }

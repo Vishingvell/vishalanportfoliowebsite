@@ -15,6 +15,14 @@ for (const path of [
   if (path === "/resume")
     assert.ok(!text.includes("ISC2"), "Unheld ISC2 claim reappeared");
   if (path === "/") {
+    assert.ok(
+      text.includes("Taken in Yishun"),
+      "Personal photograph caption missing",
+    );
+    assert.ok(
+      !text.includes("Fanz226") && !text.includes("Yishun MRT"),
+      "Old third-party hero attribution remains",
+    );
     const award = text.match(/id="achievements"[\s\S]*?<\/section>/)?.[0] || "";
     assert.ok(
       award.includes("Legacy.Lite") && !award.includes("ScamIntel"),

@@ -12,11 +12,12 @@ export function YishunArtwork() {
         role="img"
         aria-labelledby={`${id}-title ${id}-desc`}
       >
-        <title id={`${id}-title`}>Yishun MRT, in ink and sunset</title>
+        <title id={`${id}-title`}>Taken in Yishun — ink and sunset</title>
         <desc id={`${id}-desc`}>
-          A fine ink drawing of Yishun MRT station’s tiled roof, train, entrance
-          and bicycle parking, painted with spreading peach, amber and violet
-          watercolour washes.
+          An ink and watercolour interpretation of my photograph taken in
+          Yishun: silhouetted railings and a wire fence frame a dramatic sky,
+          painted with spreading peach, terracotta and dusky violet sunset
+          washes.
         </desc>
         <defs>
           <filter
@@ -73,12 +74,12 @@ export function YishunArtwork() {
         </defs>
         <image
           className="ink-drawing"
-          href="/art/yishun-ink.webp"
+          href="/art/yishun-personal-ink.webp"
           width="1536"
           height="1024"
         />
         <image
-          href="/art/yishun-sunset.webp"
+          href="/art/yishun-personal-sunset.webp"
           width="1536"
           height="1024"
           mask={`url(#${id}-paint)`}
@@ -86,39 +87,19 @@ export function YishunArtwork() {
       </svg>
       <figcaption>
         <span>
-          YISHUN MRT <span aria-hidden="true">/</span> INK &amp; SUNSET
+          TAKEN IN YISHUN <span aria-hidden="true">/</span> FROM MY CAMERA
         </span>
         <button
           type="button"
-          onClick={() => setReplay(replay + 1)}
-          aria-label="Replay the Yishun MRT painting animation"
+          onClick={() => setReplay((value) => value + 1)}
+          aria-label="Replay the Yishun sunset painting animation"
         >
           Paint again ↻
         </button>
       </figcaption>
-      <details className="art-credit">
-        <summary>Artwork credits</summary>
-        <p>
-          Ink and watercolour adaptation of a{" "}
-          <a
-            href="https://commons.wikimedia.org/wiki/File:NS13_Yishun_MRT_Station_Exit_A_202411.jpg"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Yishun MRT photograph by Fanz226
-          </a>
-          . Reinterpreted with AI-assisted drawing and sunset colours.
-          Illustration licensed under{" "}
-          <a
-            href="https://creativecommons.org/licenses/by-sa/4.0/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            CC BY-SA 4.0
-          </a>
-          .
-        </p>
-      </details>
+      <p className="photo-origin">
+        An ink &amp; wash interpretation of my own photograph.
+      </p>
     </figure>
   );
 }
