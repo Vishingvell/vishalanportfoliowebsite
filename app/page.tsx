@@ -1,4 +1,5 @@
 import { YishunArtwork } from "@/components/YishunArtwork";
+import { ScrollPainting } from "@/components/ScrollPainting";
 import { achievement } from "@/src/content/portfolio";
 import {
   Header,
@@ -12,6 +13,7 @@ import {
 export default function Home() {
   return (
     <>
+      <ScrollPainting />
       <a className="skip" href="#main">
         Skip to content
       </a>

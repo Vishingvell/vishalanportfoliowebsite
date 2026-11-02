@@ -1121,3 +1121,52 @@ body:has(.tap-page) {
 .revealed-contacts h2 {
   scroll-margin-top: 24px;
 }
+
+/* The Yishun sketch gradually becomes a sunset as the page is explored. */
+.scroll-painting {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  background: var(--paper);
+}
+.scroll-painting-ink, .scroll-painting-colour {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+}
+.scroll-painting-ink { background-image: url('/art/yishun-personal-ink.webp'); }
+.scroll-painting-colour { background-image: url('/art/yishun-personal-sunset.webp'); opacity: 0; }
+.scroll-painting::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 244, 237, .86);
+}
+.wash-sage { background: rgba(249, 223, 210, .76); }
+.achievement { background: rgba(238, 226, 240, .78); }
+
+/* Sunset washes spread behind the ink illustration after the coin lands. */
+.well-colour-bloom {
+  position: absolute;
+  z-index: 1;
+  inset: 8%;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(ellipse at 50% 48%, #f4a08bd9, #e4a44f99 35%, #8c719f99 62%, transparent 75%);
+  filter: blur(12px);
+  transform: scale(.2);
+}
+.dropped .well-colour-bloom { animation: well-bloom 1.6s .45s ease-out forwards; }
+@keyframes well-bloom { to { opacity: .85; transform: scale(1.15); } }
+body:has(.tap-page) { background: radial-gradient(ellipse at 50% 12%, #fff4ed, #f9dfd2 60%, #eee0ec); }
+.tap-page { border-color: #d9bbb6; background: #fff8f1; }
+.tap-intro h1 em, .tap-intro p span { color: var(--accent); }
+.card-well .coin { color: #79501f; border-color: #963e35; background: #ffe2a9; }
+@media (prefers-reduced-motion: reduce) {
+  .scroll-painting-colour { opacity: 1; }
+  .dropped .well-colour-bloom { animation: none; opacity: .85; transform: scale(1.15); }
+}

@@ -25,6 +25,7 @@ export function Well({ children }: { children: ReactNode }) {
   return (
     <div className={dropped ? "wish dropped" : "wish"}>
       <div className="well-scene card-well">
+        <span className="well-colour-bloom" aria-hidden="true" />
         <Image
           className="well-illustration"
           src="/art/wish-well-ink.webp"
