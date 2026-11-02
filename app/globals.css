@@ -1207,3 +1207,31 @@ body:has(.tap-page .dropped)::before { opacity: 1; }
 @media(prefers-reduced-motion:reduce) {
   body:has(.tap-page)::before, .well-pigment { transition: none; }
 }
+
+/* A vivid sunset on arrival, framed by deep ink and warm paper. */
+.scroll-painting-colour { opacity: .7; filter: saturate(1.18) contrast(1.04); }
+.scroll-painting::after { background: #fff4ed14; }
+body:has(.scroll-painting) .hero {
+  min-height: calc(100svh - 90px);
+  padding-top: 64px; padding-bottom: 110px;
+}
+body:has(.scroll-painting) .hero-copy {
+  max-width: 600px; padding: 42px;
+  background: linear-gradient(135deg, #302439f5, #443047e8);
+  color: #fff5ec; border: 1px solid #f9dfd24d;
+  border-radius: 3px 32px 3px 3px;
+  box-shadow: 0 22px 70px #24172a38;
+}
+body:has(.scroll-painting) .hero-copy h1 { font-size: clamp(50px, 6.5vw, 80px); }
+body:has(.scroll-painting) .hero-copy em { color: #ffc78d; }
+body:has(.scroll-painting) .hero-copy .eyebrow { color: #f3c8b3; }
+body:has(.scroll-painting) .hero-desc { color: #f0dedf; }
+body:has(.scroll-painting) .hero .button { background: #f5ba83; color: #34243e; }
+body:has(.scroll-painting) .hero .text-link { border-color: #efb89b; }
+body:has(.scroll-painting) .hero-index { color: #fff5ec; background: #34243edb; padding: 8px 12px; }
+body:has(.scroll-painting) .hero a:focus-visible { outline-color: #ffe1a9; }
+@media(max-width:700px) {
+  body:has(.scroll-painting) .hero { min-height: 85svh; padding-top: 35px; padding-bottom: 120px; align-items: start; }
+  body:has(.scroll-painting) .hero-copy { padding: 28px 24px; }
+  body:has(.scroll-painting) .hero-copy h1 { font-size: clamp(43px, 11vw, 66px); }
+}
