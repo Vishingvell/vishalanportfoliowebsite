@@ -1170,3 +1170,40 @@ body:has(.tap-page) { background: radial-gradient(ellipse at 50% 12%, #fff4ed, #
   .scroll-painting-colour { opacity: 1; }
   .dropped .well-colour-bloom { animation: none; opacity: .85; transform: scale(1.15); }
 }
+
+/* Let the page itself be the landscape, with paper protecting the copy. */
+.hero { grid-template-columns: 1fr; min-height: 76svh; }
+.hero-copy { max-width: 650px; padding: 32px; background: #fff4edd9; border-radius: 4px; }
+.scroll-painting::after { background: #fff4ed70; }
+body:has(.scroll-painting) .section.wrap { padding-left: 32px; padding-right: 32px; background: #fff4edcf; }
+body:has(.scroll-painting) .header, body:has(.scroll-painting) .footer { background: #fff4ede6; }
+.wash-sage { background: #f9dfd2d9; }
+.achievement { background: #eee2f0d9; }
+
+/* A coin restores the sunset across the entire NFC page. */
+body:has(.tap-page) { isolation: isolate; background: var(--paper); }
+body:has(.tap-page)::before {
+  content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(#fff4ed38, #fff4ed38), url('/art/yishun-personal-sunset.webp') center / cover;
+  opacity: 0; transition: opacity 1.8s .45s ease-out;
+}
+body:has(.tap-page .dropped)::before { opacity: 1; }
+.tap-page { background: #fff8f1de; transition: background 1.8s .45s ease-out; }
+.tap-page:has(.dropped) { background: #fff8f1db; }
+.card-wordmark { font-size: 15px; letter-spacing: -.04em; }
+.well-pigment {
+  position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2;
+  pointer-events: none; mix-blend-mode: multiply; opacity: 0;
+  clip-path: circle(0% at 50% 65%);
+  transition: opacity 1.5s .45s ease-out, clip-path 1.8s .45s ease-out;
+}
+.dropped .well-pigment { opacity: .8; clip-path: circle(85% at 50% 65%); }
+.dropped .well-colour-bloom { opacity: 0; animation: none; }
+@media(max-width:700px) {
+  .hero { min-height: 70svh; }
+  .hero-copy { padding: 22px 18px; }
+  body:has(.scroll-painting) .section.wrap { padding-left: 20px; padding-right: 20px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  body:has(.tap-page)::before, .well-pigment { transition: none; }
+}

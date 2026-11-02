@@ -20,12 +20,9 @@ export default async function Tap({
     <main className="tap-page">
       <div className="card-topline">
         <span className="card-wordmark" aria-hidden="true">
-          W.
+          VK
         </span>
         <p className="eyebrow">A LITTLE CONNECTION</p>
-        <span className="card-star" aria-hidden="true">
-          ✳
-        </span>
       </div>
       <header className="tap-intro">
         <h1>

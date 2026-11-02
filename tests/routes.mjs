@@ -16,8 +16,8 @@ for (const path of [
     assert.ok(!text.includes("ISC2"), "Unheld ISC2 claim reappeared");
   if (path === "/") {
     assert.ok(
-      text.includes("Taken in Yishun"),
-      "Personal photograph caption missing",
+      text.includes('class="scroll-painting"'),
+      "Scroll painting background missing",
     );
     assert.ok(
       !text.includes("Fanz226") && !text.includes("Yishun MRT"),

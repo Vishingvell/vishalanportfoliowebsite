@@ -1,4 +1,3 @@
-import { YishunArtwork } from "@/components/YishunArtwork";
 import { ScrollPainting } from "@/components/ScrollPainting";
 import { achievement } from "@/src/content/portfolio";
 import {
@@ -38,7 +37,6 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <YishunArtwork />
           <span className="hero-index">01 — INTRODUCTION</span>
         </section>
         <section id="about" className="section wrap about">

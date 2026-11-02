@@ -35,6 +35,16 @@ export function Well({ children }: { children: ReactNode }) {
           sizes="(max-width: 380px) 240px, 304px"
           priority
         />
+        <svg className="well-pigment" viewBox="0 0 640 640" aria-hidden="true">
+          <defs>
+            <linearGradient id="roof-wash" x2="0.8" y2="1"><stop stopColor="#efbb85"/><stop offset="1" stopColor="#b96150"/></linearGradient>
+            <linearGradient id="stone-wash" x2="0.3" y2="1"><stop stopColor="#f7c391"/><stop offset="1" stopColor="#a58bb7"/></linearGradient>
+          </defs>
+          <path fill="url(#roof-wash)" d="M100 204 210 83 496 43 407 196Z M496 43 575 207 559 211 493 88Z"/>
+          <path fill="#cc9a74" d="M185 212 222 207 222 408 190 414Z M459 126 489 80 493 418 456 429Z"/>
+          <path fill="url(#stone-wash)" d="M137 411Q138 355 325 360Q529 361 531 413L526 548Q504 598 323 601Q168 595 137 552Z"/>
+          <ellipse fill="#8d7ba6" cx="331" cy="421" rx="116" ry="20"/>
+        </svg>
         <span className="well-surface-ripple" aria-hidden="true" />
         <button
           className="coin"
